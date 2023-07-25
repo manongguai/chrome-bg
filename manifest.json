@@ -1,6 +1,7 @@
 {
-    "name": "kirk-bg",
+    "name": "chrome-bg",
     "version": "1.0.0",
+    "author": "kirk",
     "description": "bg set",
     "manifest_version": 3,
     "icons": {

@@ -11,6 +11,7 @@ const getDom = function () {
         const dom = `<div 
         style="width:100vw;height:100vh;
         position:fixed;
+        z-index:9999;
         left:0;top:0;
         opacity:${bgOpacity / 100};
         user-select: none;
