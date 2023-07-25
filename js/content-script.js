@@ -1,22 +1,29 @@
 const getDom = function () {
   return new Promise((res) => {
-    chrome.storage.sync.get("bgUrl", (budget) => {
-      let bgUrl = budget.bgUrl || "https://files.catbox.moe/1uoq0w.png";
-      const dom = `<div 
+    chrome.storage.sync.get(
+      {
+        bgUrl: "https://files.catbox.moe/1uoq0w.png",
+        bgOpacity: 40,
+      },
+      (budget) => {
+        let bgUrl = budget.bgUrl || "https://files.catbox.moe/1uoq0w.png";
+        let bgOpacity = budget.bgOpacity || 40;
+        const dom = `<div 
         style="width:100vw;height:100vh;
         position:fixed;
         left:0;top:0;
-        opacity:0.4;
+        opacity:${bgOpacity / 100};
         user-select: none;
         pointer-events: none;
         ">
         <img src="${bgUrl}" style="width:100vw;height:100vh;object-fit:cover" />
     </div>`;
-      let div = document.createElement("div");
-      div.setAttribute("id", "kirk-bg");
-      div.innerHTML = dom;
-      res(div);
-    });
+        let div = document.createElement("div");
+        div.setAttribute("id", "kirk-bg");
+        div.innerHTML = dom;
+        res(div);
+      }
+    );
   });
 };
 {
