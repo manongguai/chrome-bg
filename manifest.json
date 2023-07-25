@@ -1,0 +1,43 @@
+{
+    "name": "kirk-bg",
+    "version": "1.0.0",
+    "description": "bg set",
+    "manifest_version": 3,
+    "icons": {
+        "16": "images/16.png",
+        "32": "images/32.png",
+        "64": "images/64.png",
+        "128": "images/128.png"
+    },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "/resources/00032-689605951.png",
+                "16.png"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "action": {
+        "default_icon": {
+            "64": "images/64.png"
+        }
+    },
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs",
+        "storage",
+        "webNavigation"
+    ],
+    "options_page": "options.html",
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
+}
